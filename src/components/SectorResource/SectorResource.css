@@ -1,0 +1,154 @@
+/* ===== SECTION ===== */
+.sector-resource-section {
+  position: relative;
+  background: #f4f6f8;
+  padding: 80px 40px;
+  overflow: hidden;
+}
+
+/* Green diagonal shape */
+.sector-resource-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  background: #5e8e3e;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+/* ===== CONTAINER ===== */
+.sector-resource-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+.sector-resource-header {
+  margin-bottom: 60px;
+}
+
+.sector-resource-title {
+  font-size: 40px;
+  font-weight: 300;
+  color: #1b3c6b;
+  margin-bottom: 20px;
+}
+
+.sector-resource-title span {
+  font-weight: 700;
+}
+
+.sector-resource-description {
+  font-size: 20px;
+  color: #1b3c6b;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* ===== GRID ===== */
+.sector-resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  position: relative;
+}
+
+/* vertical dividers */
+.sector-resource-grid::before,
+.sector-resource-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #ccc;
+}
+
+.sector-resource-grid::before {
+  left: 33.33%;
+}
+
+.sector-resource-grid::after {
+  left: 66.66%;
+}
+
+/* ===== CARD ===== */
+.sector-resource-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* title */
+.resource-title {
+  font-size: 28px;
+  color: #1b3c6b;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+/* divider */
+.resource-divider {
+  height: 1px;
+  background: #1b3c6b;
+  opacity: 0.3;
+  margin-bottom: 30px;
+}
+
+/* link */
+.resource-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1b3c6b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.arrow {
+  font-size: 24px;
+  transition: transform 0.2s ease;
+}
+
+.resource-link:hover .arrow {
+  transform: translateX(6px);
+}
+
+/* ===== BUTTON ===== */
+.resource-btn {
+  margin-top: 60px;
+  background: #0d6ea8;
+  color: white;
+  border: none;
+  padding: 16px 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.resource-btn:hover {
+  background: #095a8c;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .sector-resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sector-resource-grid::before,
+  .sector-resource-grid::after {
+    display: none;
+  }
+
+  .resource-title {
+    font-size: 22px;
+  }
+
+  .sector-resource-title {
+    font-size: 36px;
+  }
+}

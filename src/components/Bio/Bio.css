@@ -1,0 +1,49 @@
+.bio-page {
+  font-family: Arial, sans-serif;
+  color: #002147;
+  font-size: 18px;
+}
+
+.bio-hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f4f8fb;
+}
+
+.bio-hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.bio-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.bio-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.bio-text {
+  flex: 1;
+}
+
+.bio-image {
+  flex: 1;
+}
+
+.bio-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.bio-footer {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+}

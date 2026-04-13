@@ -1,6 +1,7 @@
 import React from "react";
 import "./Impact.css";
 import { impactData } from "../../assets/dummydata.js";
+import photo4 from "../../assets/photo 4.jpeg";
 
 const Impact = () => {
   return (
@@ -24,7 +25,7 @@ const Impact = () => {
         <div className="impact-quote-container">
           {/* LEFT IMAGE */}
           <div className="impact-quote-image">
-            <img src={impactData.quoteImageUrl} alt="Impact testimonial" />
+            <img src={photo4} alt="Impact testimonial" />
           </div>
 
           {/* RIGHT CARD */}

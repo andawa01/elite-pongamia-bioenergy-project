@@ -1,5 +1,8 @@
 import React from "react";
 import "./About.css";
+import photo2 from "../../assets/photo 2.jpeg";
+import photo1 from "../../assets/photo 1.jpeg";
+import photo3 from "../../assets/photo 3.jpeg";
 
 const About = () => {
   return (
@@ -29,20 +32,14 @@ const About = () => {
         </div>
 
         <div className="about-image">
-          <img
-            src="https://images.unsplash.com/photo-1581092160607-ee22621dd758"
-            alt="Clean energy mission"
-          />
+          <img src={photo2} alt="Clean energy mission" />
         </div>
       </section>
 
       {/* VISION SECTION */}
       <section className="about-section reverse">
         <div className="about-image">
-          <img
-            src="https://images.unsplash.com/photo-1509391366360-2e959784a276"
-            alt="Sustainable future"
-          />
+          <img src={photo1} alt="Sustainable future" />
         </div>
 
         <div className="about-text">
@@ -67,10 +64,7 @@ const About = () => {
         </div>
 
         <div className="about-image">
-          <img
-            src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a"
-            alt="Community values"
-          />
+          <img src={photo3} alt="Community values" />
         </div>
       </section>
 

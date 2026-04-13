@@ -20,9 +20,8 @@ export const heroSectionData = {
 };
 
 export const impactData = {
-    quoteImageUrl: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=600&fit=crop",
-    authorName: "Dr. Fatih Birols",
-    authorTitle: "Executive Director, IEA"
+    authorName: "Dr. John Doe",
+    authorTitle: "Managing Director"
 };
 
 export const sectionData = {

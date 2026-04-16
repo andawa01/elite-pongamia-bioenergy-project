@@ -38,7 +38,12 @@ const Footer = () => {
               <img src={footerData.logoUrl} alt="Clean Cooking Alliance" />
             </Link>
           </div>
-          <h3 className="footer-logo-text">{footerData.companyName}</h3>
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <h3 className="footer-logo-text">{footerData.companyName}</h3>
+          </Link>
         </div>
 
         {/* Divider */}
@@ -167,8 +172,9 @@ const Footer = () => {
       <div className="footer-bottom">
         <p className="footer-copyright">
           &copy; {new Date().getFullYear()} ELITE PONGAMIA BIOENERGY PROJECT
-          LTD. All rights reserved.
+          LTD.
         </p>
+        <p className="footer-tagline">Nature's energy for a greener tomorrow</p>
       </div>
     </footer>
   );

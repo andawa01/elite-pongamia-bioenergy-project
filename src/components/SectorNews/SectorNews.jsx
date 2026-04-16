@@ -49,16 +49,17 @@ const SectorNews = () => {
                   className="sector-news-image"
                 />
                 <div className="sector-news-date">{item.date}</div>
+                <h3 className="sector-news-image-title">{item.title}</h3>
               </div>
 
-              <h3 className="sector-news-card-title">{item.title}</h3>
+              <div className="sector-news-content">
+                <div className="sector-news-divider" />
 
-              <div className="sector-news-divider" />
-
-              <a href="#" className="sector-news-link">
-                <span>{item.cta}</span>
-                <span className="sector-news-arrow">→</span>
-              </a>
+                <a href="#" className="sector-news-link">
+                  <span>{item.cta}</span>
+                  <span className="sector-news-arrow">→</span>
+                </a>
+              </div>
             </article>
           ))}
         </div>

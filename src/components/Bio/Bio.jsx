@@ -6,11 +6,13 @@ const Bio = () => {
     <div className="bio-page">
       {/* HERO SECTION */}
       <section className="bio-hero">
-        <h1>BioDigesters</h1>
-        <p>
-          Turning organic waste into clean energy and organic fertilizer for a
-          sustainable future.
-        </p>
+        <div className="bio-hero-content">
+          <h1 className="bio-hero-title">BioDigesters</h1>
+          <p className="bio-hero-subtitle">
+            Turning organic waste into clean energy and organic fertilizer for a
+            sustainable future.
+          </p>
+        </div>
       </section>
 
       {/* INTRO SECTION */}
@@ -44,7 +46,7 @@ const Bio = () => {
 
         <div className="bio-text">
           <h2>Why is it Important?</h2>
-          <ul>
+          <ul className="bio-list">
             <li>Produces clean, renewable energy (biogas)</li>
             <li>Reduces reliance on firewood and charcoal</li>
             <li>Helps reduce deforestation and air pollution</li>
@@ -75,12 +77,14 @@ const Bio = () => {
 
       {/* CONCLUSION */}
       <section className="bio-footer">
-        <h2>Building a Cleaner Future</h2>
-        <p>
-          BioDigesters are a key solution in the transition to clean energy,
-          especially in rural communities where access to modern energy is
-          limited.
-        </p>
+        <div className="bio-footer-content">
+          <h2>Building a Cleaner Future</h2>
+          <p>
+            BioDigesters are a key solution in the transition to clean energy,
+            especially in rural communities where access to modern energy is
+            limited.
+          </p>
+        </div>
       </section>
     </div>
   );

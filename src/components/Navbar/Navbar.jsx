@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
-import { Search, Menu, X, Plus, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRightIcon } from "lucide-react";
 import {
   FaFacebookF,
   FaTwitter,
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedItem, setExpandedItem] = useState(null);
-  const [searchQuery, setSearchQuery] = useState("");
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -80,36 +79,43 @@ const Navbar = () => {
           >
             <img src={logo} alt="Logo" />
           </Link>
-          <div className="logo-text">
-            <div className="logo-main">ELITE PONGAMIA</div>
-            <div className="logo-main">BIOENERGY</div>
-            <div className="logo-main">PROJECT LTD</div>
-          </div>
+          <Link
+            to="/"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              closeMenu();
+            }}
+          >
+            <div className="logo-text">
+              <div className="logo-main">ELITE PONGAMIA</div>
+              <div className="logo-main">BIOENERGY</div>
+              <div className="logo-main">PROJECT LTD</div>
+            </div>
+
+            <div className="logo-tagline">
+              Nature's energy for a greener tomorrow
+            </div>
+          </Link>
         </div>
 
         {/* Desktop Navigation Links */}
         <div className="navbar-menu-desktop">
-          <Link to="/biodigester" className="nav-link">
+          <NavLink to="/biodigester" className="nav-link">
             WHAT IS BIOENERGY?
-          </Link>
-          <Link to="/what-we-do" className="nav-link">
+          </NavLink>
+          <NavLink to="/what-we-do" className="nav-link">
             WHAT WE DO
-          </Link>
-          <Link to="/sector-resources" className="nav-link">
+          </NavLink>
+          <NavLink to="/sector-resources" className="nav-link">
             SECTOR RESOURCES
-          </Link>
-          <Link to="/about-us" className="nav-link">
+          </NavLink>
+          <NavLink to="/about-us" className="nav-link">
             ABOUT US
-          </Link>
+          </NavLink>
         </div>
 
         {/* Right Section */}
         <div className="navbar-right">
-          {/* Search Icon - Desktop Only */}
-          <button className="search-btn" aria-label="Search">
-            <Search size={24} />
-          </button>
-
           {/* Donate Button - Desktop */}
           <a href="#donate" className="donate-btn">
             DONATE
@@ -146,19 +152,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Search Bar in Mobile Menu */}
-          <div className="mobile-search-bar">
-            <Search size={20} className="search-icon" />
-            <input
-              type="text"
-              placeholder="Type to search..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="search-input"
-            />
-            <ChevronRight size={20} className="search-arrow" />
-          </div>
-
           {/* Menu Items */}
           <div className="mobile-menu-items">
             {menuItems.map((item) => (
@@ -173,7 +166,7 @@ const Navbar = () => {
                   }}
                 >
                   <span className="menu-item-label">{item.label}</span>
-                  <Plus size={24} />
+                  <ChevronRightIcon size={24} />
                 </Link>
               </div>
             ))}

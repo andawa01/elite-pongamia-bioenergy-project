@@ -1,180 +1,95 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import { footerData } from "../../assets/dummydata.js";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaTwitter,
+  FaInstagram,
+} from "react-icons/fa"; // Optional: npm install react-icons
 
 const Footer = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    country: "",
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <footer className="footer-container">
-      <div className="footer-content">
-        {/* Logo Section */}
-        <div className="footer-logo-section">
-          <div className="footer-logo">
-            <Link
-              to="/"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            >
-              <img src={footerData.logoUrl} alt="Clean Cooking Alliance" />
-            </Link>
-          </div>
-          <Link
-            to="/"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            <h3 className="footer-logo-text">{footerData.companyName}</h3>
+      <div className="footer-main">
+        {/* Left Section: Brand & Bio */}
+        <div className="footer-section brand-column">
+          <Link to="/" onClick={scrollToTop} className="footer-logo-wrapper">
+            <img
+              className="rounded-2xl"
+              src={footerData.logoUrl}
+              alt="Elite Pongamia"
+            />
           </Link>
-        </div>
-
-        {/* Divider */}
-        <div className="footer-divider"></div>
-
-        {/* Links Section */}
-        <div className="footer-links-section">
-          <h4 className="footer-section-title">Quick Links</h4>
-          <nav className="footer-nav">
-            {footerData.links.map((link, index) => (
-              <a key={index} href={link.url} className="footer-link">
-                {link.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-
-        {/* Divider */}
-        <div className="footer-divider"></div>
-
-        {/* Contact Section */}
-        <div className="footer-contact-section">
-          <h4 className="footer-section-title">Mailing Address:</h4>
-          <p className="footer-contact-text">{footerData.address.street}</p>
-          <p className="footer-contact-text">{footerData.address.suite}</p>
-          <p className="footer-contact-text">{footerData.address.cityState}</p>
-          <p className="footer-contact-text">{footerData.address.phone}</p>
-          <h4 className="footer-section-title" style={{ marginTop: "20px" }}>
-            Email:
-          </h4>
-          <a href={`mailto:${footerData.email}`} className="footer-email">
-            {footerData.email}
-          </a>
-        </div>
-
-        {/* Divider */}
-        <div className="footer-divider"></div>
-
-        {/* Newsletter Section */}
-        <div className="footer-newsletter-section">
-          <h4 className="footer-section-title">Newsletter Sign-Up</h4>
-          <p className="footer-required-text">
-            "*" <span>indicates required fields</span>
+          <p className="footer-description">
+            Leading the charge in sustainable bio-energy solutions. Empowering
+            communities through nature's inherent power for a cleaner, greener
+            tomorrow.
           </p>
+          <div className="social-links">
+            <a href="#link" className="social-icon">
+              <FaLinkedinIn />
+            </a>
+            <a href="#link" className="social-icon">
+              <FaTwitter />
+            </a>
+            <a href="#link" className="social-icon">
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
 
-          <form className="footer-form" onSubmit={handleSubmit}>
-            {/* First Name & Last Name */}
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="firstName" className="form-label">
-                  First Name <span className="required-asterisk">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleInputChange}
-                  required
-                  className="form-input"
-                />
-              </div>
+        {/* Center Section: Navigation */}
+        <div className="footer-section links-column">
+          <h4 className="column-title">Quick Links</h4>
+          <ul className="footer-links">
+            <li>
+              <Link to="/about-us" onClick={scrollToTop}>
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/sector-resources" onClick={scrollToTop}>
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link to="/what-we-do" onClick={scrollToTop}>
+                What We Do
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact-us" onClick={scrollToTop}>
+                Contact US
+              </Link>
+            </li>
+          </ul>
+        </div>
 
-              <div className="form-group">
-                <label htmlFor="lastName" className="form-label">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleInputChange}
-                  className="form-input"
-                />
-              </div>
-            </div>
-
-            {/* Email & Country */}
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="email" className="form-label">
-                  Email <span className="required-asterisk">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="form-input"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="country" className="form-label">
-                  Country
-                </label>
-                <select
-                  id="country"
-                  name="country"
-                  value={formData.country}
-                  onChange={handleInputChange}
-                  className="form-select"
-                >
-                  <option value="">Select one</option>
-                  {footerData.countries.map((country, index) => (
-                    <option key={index} value={country}>
-                      {country}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Submit Button */}
-            <button type="submit" className="footer-submit-btn">
-              SUBMIT
-            </button>
-          </form>
+        {/* Right Section: Contact Info */}
+        <div className="footer-section contact-column">
+          <h4 className="column-title">Contact Us</h4>
+          <p>Kakamega, Kenya</p>
+          <p>Email: info@elitepongamia.com</p>
+          <p>Phone: +254 (7) 422 22985</p>
         </div>
       </div>
 
-      {/* Bottom Copyright */}
+      {/* Bottom Bar */}
       <div className="footer-bottom">
-        <p className="footer-copyright">
-          &copy; {new Date().getFullYear()} ELITE PONGAMIA BIOENERGY PROJECT
-          LTD.
-        </p>
-        <p className="footer-tagline">Nature's energy for a greener tomorrow</p>
+        <div className="bottom-content">
+          <p className="footer-copyright">
+            &copy; {new Date().getFullYear()} {footerData.companyName}. All
+            rights reserved.
+          </p>
+          <div className="legal-links">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+          </div>
+        </div>
       </div>
     </footer>
   );

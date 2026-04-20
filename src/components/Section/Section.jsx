@@ -1,46 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Section.css";
-import { sectionData } from "../../assets/dummydata.js";
+import { NavLink } from "react-router-dom";
 
 const Section = () => {
-  const [selectedAmount, setSelectedAmount] = useState(null);
-
-  const donationAmounts = ["$50", "$100", "$250", "$1,000", "$2,500", "Other"];
-
   return (
-    <section className="section-container">
-      {/* Left: Content */}
-      <div className="section-content">
-        <h2 className="section-title">
-          Help us ensure no one's life is
-          <span> limited by how they use Bio Energy</span>
+    <section className="invest-banner">
+      <div className="invest-container">
+        <h2 className="invest-title">
+          Investing in a Sustainable Bioenergy Future for Africa
         </h2>
 
-        {/* Donation Amount Options */}
-        <div className="donation-grid">
-          {donationAmounts.map((amount, index) => (
-            <button
-              key={index}
-              className={`donation-btn ${
-                selectedAmount === amount ? "active" : ""
-              } ${amount === "$50" ? "btn-highlight" : ""}`}
-              onClick={() => setSelectedAmount(amount)}
-            >
-              {amount}
-            </button>
-          ))}
-        </div>
+        <p className="invest-subtitle">
+          Elite Pongamia Bioenergy Project Ltd develops scalable bioenergy
+          solutions using pongamia cultivation to deliver clean energy, carbon
+          reduction, and climate resilience.
+        </p>
 
-        {/* Donate Button */}
-        <button className="btn btn-donate">DONATE</button>
-      </div>
-
-      {/* Right: Image with Diagonal Cut */}
-      <div className="section-image">
-        <img
-          src={sectionData.heroImageUrl}
-          alt="Help us ensure clean cooking"
-        />
+        <p className="invest-subtitle">
+          Our mandate is to advance renewable energy, restore degraded lands,
+          create green jobs, and expand access to clean energy through strategic
+          partnerships and community-driven impact.
+        </p>
+        <NavLink to="/contact-us" className="invest-button">
+          Get in Touch
+          <span className="arrow-icon">→</span>
+        </NavLink>
       </div>
     </section>
   );

@@ -13,9 +13,9 @@ const Impact = () => {
             Our <span>Impact</span>
           </h2>
           <p className="impact-description">
-            With partners around the world, the Clean Cooking Alliance (CCA)
-            mobilizes investment, innovation, and political will to accelerate
-            access to clean cooking.
+            Together, we develop, promote, and scale sustainable bioenergy
+            solutions that contribute to clean energy access, environmental
+            conservation, and socio-economic development.
           </p>
         </div>
       </section>

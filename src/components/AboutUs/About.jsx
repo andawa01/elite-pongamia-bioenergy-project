@@ -1,82 +1,152 @@
 import React from "react";
 import "./About.css";
-import photo2 from "../../assets/photo 2.jpeg";
 import photo1 from "../../assets/photo 1.jpeg";
 import photo3 from "../../assets/photo 3.jpeg";
+// Replace these with your actual video paths
+import video1 from "../../assets/video1.mp4";
+import video2 from "../../assets/video2.mp4";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="about-page">
-      {/* HERO SECTION */}
-      <section className="about-hero">
-        <div className="about-hero-content">
-          <h1>About Us</h1>
+    <div className="about-premium-wrapper">
+      {/* --- ELITE HERO --- */}
+      <section className="about-hero-minimal">
+        <div className="container">
+          <span className="brand-badge">
+            Elite Pongamia Bioenergy Project Ltd
+          </span>
+          <h1>
+            Transforming Landscapes, <br />
+            <span>Restoring Ecosystems</span>
+          </h1>
           <p>
-            We are committed to promoting sustainable energy solutions through
-            innovative bioenergy systems and community-driven impact.
+            We are a forward-thinking renewable energy company dedicated to
+            nature-based solutions through the cultivation of Pongamia trees and
+            sustainable bioenergy production.
           </p>
         </div>
       </section>
 
-      {/* MISSION SECTION */}
-      <section className="about-section">
-        <div className="about-image-card">
-          <img src={photo2} alt="Clean energy mission" />
-          <div className="about-image-overlay">
-            <div className="about-badge">Mission</div>
-            <h2>Our Mission</h2>
+      {/* --- VIDEO FEATURE (Innovation & Mandate) --- */}
+      <section className="video-section">
+        <div className="container">
+          <div className="video-layout-grid">
+            <div className="video-card">
+              <video controls poster={photo3} className="about-vid-element">
+                <source src={video1} type="video/mp4" />
+              </video>
+              <div className="video-caption">
+                <h3>Innovation in Motion</h3>
+                <p>
+                  Advancing renewable solutions through continuous research and
+                  technology.
+                </p>
+              </div>
+            </div>
+            <div className="video-card">
+              <video controls poster={photo1} className="about-vid-element">
+                <source src={video2} type="video/mp4" />
+              </video>
+              <div className="video-caption">
+                <h3>Community & Climate</h3>
+                <p>
+                  Creating green jobs and measurable carbon reduction in
+                  underserved regions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- MISSION & VISION (Side-by-Side Narrative) --- */}
+      <section className="narrative-section">
+        <div className="container">
+          <div className="narrative-grid">
+            <div className="narrative-image">
+              <img src={photo3} alt="Clean Cooking Mission" />
+            </div>
+            <div className="narrative-content">
+              <span className="section-label">Our Mission</span>
+              <h2>Impactful Change</h2>
+              <p>
+                Nearly one in four people depend on polluting open fires. Our
+                mission is to accelerate the transition to clean, affordable
+                energy while addressing climate change and deforestation through
+                bioenergy and carbon finance.
+              </p>
+            </div>
+          </div>
+
+          <div className="narrative-grid reverse">
+            <div className="narrative-image">
+              <img src={photo1} alt="Renewable Future" />
+            </div>
+            <div className="narrative-content">
+              <span className="section-label">Our Vision</span>
+              <h2>Global Resilience</h2>
+              <p>
+                We champion renewable cooking energy solutions that protect our
+                planet. By integrating sustainable land use with community-based
+                initiatives, we drive a future where ecosystems are restored and
+                communities thrive.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- CORE MANDATE (Values Grid) --- */}
+      <section className="mandate-grid-dark">
+        <div className="container">
+          <div className="centered-header">
+            <h2>Our Core Mandate</h2>
             <p>
-              Worldwide, nearly one in four people depend on polluting open
-              fires or inefficient stoves to cook their food, harming health,
-              the climate, and the environment. The Clean Cooking Alliance (CCA)
-              works with a global network of partners to build an inclusive
-              industry that can make clean cooking accessible to all.
+              Committed to socio-economic development and environmental
+              conservation.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* VISION SECTION */}
-      <section className="about-section">
-        <div className="about-image-card">
-          <img src={photo1} alt="Sustainable future" />
-          <div className="about-image-overlay">
-            <div className="about-badge">Vision</div>
-            <h2>Our Vision</h2>
-            <p>
-              Champion clean, affordable, environment-friendly, pollution-free,
-              sustainable, renewable cooking energy solutions that transform
-              lives and protect our planet for future generations.
-            </p>
+          <div className="mandate-boxes">
+            {[
+              {
+                title: "Climate Action",
+                desc: "Carbon sequestration and reduced emissions.",
+              },
+              {
+                title: "Green Jobs",
+                desc: "Empowering smallholders with inclusive growth.",
+              },
+              {
+                title: "Innovation",
+                desc: "Scalable models for long-term sustainability.",
+              },
+              {
+                title: "Restoration",
+                desc: "Rejuvenating degraded lands via Pongamia trees.",
+              },
+            ].map((item, i) => (
+              <div className="mandate-box" key={i}>
+                <div className="box-check">✓</div>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* VALUES SECTION */}
-      <section className="about-section">
-        <div className="about-image-card">
-          <img src={photo3} alt="Community values" />
-          <div className="about-image-overlay">
-            <div className="about-badge">Values</div>
-            <h2>Our Core Values</h2>
-            <ul className="overlay-values-list">
-              <li>✓ Sustainability</li>
-              <li>✓ Innovation</li>
-              <li>✓ Community Empowerment</li>
-              <li>✓ Environmental Protection</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <section className="about-footer">
-        <div className="about-footer-content">
+      {/* --- FINAL ACTION --- */}
+      <section className="about-impact-footer">
+        <div className="container">
           <h2>Together for a Greener Future</h2>
           <p>
-            Join us in building a cleaner, healthier, and more sustainable world
-            through bioenergy innovation.
+            Join Elite Pongamia in building a healthier world through
+            innovation.
           </p>
+          <Link to="/contact-us">
+            <button className="cta-btn-white">Contact Our Team</button>
+          </Link>
         </div>
       </section>
     </div>

@@ -6,6 +6,7 @@ import What from "./pages/What";
 import AboutUs from "./pages/AboutUs";
 import SectorResource from "./components/SectorResource/SectorResource.jsx";
 import Sector from "./pages/Sector.jsx";
+import ContactUs from "./pages/ContactUs.jsx";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Route path="/what-we-do" element={<What />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/sector-resources" element={<Sector />} />
+      <Route path="/contact-us" element={<ContactUs />} />
     </Routes>
   );
 };

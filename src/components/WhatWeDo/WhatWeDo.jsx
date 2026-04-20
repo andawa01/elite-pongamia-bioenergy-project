@@ -1,7 +1,7 @@
 import React from "react";
 import "./WhatWeDo.css";
 import biodigester from "../../assets/bio-digester.webp";
-import photo1 from "../../assets/photo 1.jpeg";
+import photo5 from "../../assets/photo 5.jpeg";
 
 const WhatWeDo = () => {
   return (
@@ -43,7 +43,7 @@ const WhatWeDo = () => {
             </p>
           </div>
           <div className="wwd-image">
-            <img src={photo1} alt="Sustainability" />
+            <img src={photo5} alt="Sustainability" />
           </div>
         </div>
       </section>

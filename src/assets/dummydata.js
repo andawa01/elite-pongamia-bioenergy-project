@@ -20,7 +20,7 @@ export const heroSectionData = {
 };
 
 export const impactData = {
-    authorName: "Dr. John Doe",
+    authorName: "DANSON LIGARE",
     authorTitle: "Managing Director"
 };
 

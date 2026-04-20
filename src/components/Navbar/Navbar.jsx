@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import logo from "../../assets/logo.png";
+//import logo from "../../assets/logo.png";
 import { Menu, X, ChevronRightIcon } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
@@ -15,6 +15,7 @@ const Navbar = () => {
     { label: "PRODUCTS", id: "/sector-resources" },
     { label: "ABOUT US", id: "/about-us" },
     { label: "CONTACT US", id: "/contact-us" },
+    { label: "TENDERS", id: "/tenders" },
   ];
 
   return (
@@ -31,7 +32,7 @@ const Navbar = () => {
               }}
               className="logo-link"
             >
-              <img src={logo} alt="Logo" />
+              {/* <img src={logo} alt="Logo" /> */}
 
               <div>
                 <div className="logo-text">
@@ -64,6 +65,9 @@ const Navbar = () => {
             <NavLink to="/contact-us" className="nav-link">
               CONTACT US
             </NavLink>
+            <NavLink to="/tenders" className="nav-link">
+              TENDERS
+            </NavLink>
           </div>
 
           {/* Right Section */}
@@ -80,7 +84,7 @@ const Navbar = () => {
           <div className={`navbar-menu-mobile ${isMenuOpen ? "active" : ""}`}>
             <div className="mobile-menu-header">
               <div className="mobile-menu-logo-section">
-                <img src={logo} alt="Logo" />
+                {/* <img src={logo} alt="Logo" /> */}
                 <div>
                   <div className="mobile-menu-logo-main">ELITE PONGAMIA</div>
                   <div className="mobile-menu-logo-main">BIOENERGY PROJECT</div>

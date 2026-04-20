@@ -231,3 +231,36 @@
     font-size: 13px;
   }
 }
+
+@media (min-width: 1025px) {
+  .impact-quote-container.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .impact-quote-container.reverse .impact-quote-box {
+    margin-left: 0;
+    margin-right: -100px; /* Overlap on the right side instead */
+    padding: 60px 140px 0 60px; /* Swap padding so text isn't hidden by the image */
+  }
+
+  /* Optional: flip the decorative circle for the reversed card */
+  .impact-quote-container.reverse .impact-quote-box::before {
+    right: auto;
+    left: -40px;
+  }
+}
+
+/* Ensure the CTA stays consistent or flips alignment */
+.impact-quote-container.reverse .impact-cta-wrapper {
+  margin-left: 0;
+  margin-right: auto; /* Aligns CTA to the left on the reversed card */
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+/* Responsive adjustment for the reversed image lift */
+@media (max-width: 1024px) {
+  .impact-quote-container.reverse {
+    flex-direction: column; /* Stack normally on mobile */
+  }
+}

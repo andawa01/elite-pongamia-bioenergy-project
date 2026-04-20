@@ -128,6 +128,22 @@
   align-items: center;
 }
 
+.footer-brand-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.footer-tagline {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+}
+
 .footer-copyright {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.4);

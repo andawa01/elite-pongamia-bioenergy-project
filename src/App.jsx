@@ -7,6 +7,7 @@ import AboutUs from "./pages/AboutUs";
 import SectorResource from "./components/SectorResource/SectorResource.jsx";
 import Sector from "./pages/Sector.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
+import Tender from "./pages/Tender.jsx";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/sector-resources" element={<Sector />} />
       <Route path="/contact-us" element={<ContactUs />} />
+      <Route path="/tenders" element={<Tender />} />
     </Routes>
   );
 };

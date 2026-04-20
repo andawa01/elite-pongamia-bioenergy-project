@@ -1,4 +1,14 @@
 import React from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper modules
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 import "./SectorResource.css";
 import fifty from "../../assets/50litres.webp";
 import sixty from "../../assets/60Litres.png";
@@ -78,27 +88,39 @@ const SectorResource = () => {
           <p>Explore our bioenergy cooking solutions and pricing options.</p>
         </div>
 
-        <div className="products-grid">
+        <Swiper
+          modules={[Pagination, Autoplay, Navigation]}
+          spaceBetween={30}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="products-slider"
+        >
           {products.map((item, index) => (
-            <div className="product-card" key={index}>
-              <div className="product-image">
-                <img src={item.image} alt={item.size} />
+            <SwiperSlide key={index}>
+              <div className="product-card">
+                <div className="product-image">
+                  <img src={item.image} alt={item.size} />
+                </div>
+                <div className="product-content">
+                  <h3>{item.size} System</h3>
+                  <ul>
+                    <li>⚡ Power: {item.power}</li>
+                    <li>⚖️ Weight: {item.weight}</li>
+                    <li>👥 Capacity: {item.capacity}</li>
+                  </ul>
+                  <div className="price">{item.price}</div>
+                </div>
               </div>
-
-              <div className="product-content">
-                <h3>{item.size} System</h3>
-
-                <ul>
-                  <li>⚡ Power: {item.power}</li>
-                  <li>⚖️ Weight: {item.weight}</li>
-                  <li>👥 Capacity: {item.capacity}</li>
-                </ul>
-
-                <div className="price">{item.price}</div>
-              </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );

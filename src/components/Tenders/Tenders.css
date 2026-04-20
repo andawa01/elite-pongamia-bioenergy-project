@@ -1,0 +1,101 @@
+.tenders-section {
+  background: #ffffff;
+  padding: 80px 40px;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.tenders-container {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* HEADER STYLE (Consistent with your other sections) */
+.tenders-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tenders-header h2 {
+  font-size: 42px;
+  color: #002147;
+  font-weight: 300;
+}
+
+.tenders-header span {
+  font-weight: 700;
+  color: #5e8e3e;
+}
+
+.tenders-header p {
+  font-size: 18px;
+  color: #5b6b7c;
+  max-width: 600px;
+  margin: 20px auto 0;
+  line-height: 1.6;
+}
+
+/* NO TENDERS CARD */
+.no-tenders-card {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 24px;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.no-tenders-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+  filter: grayscale(1);
+  opacity: 0.6;
+}
+
+.no-tenders-card h3 {
+  font-size: 24px;
+  color: #1b3c6b;
+  margin-bottom: 15px;
+}
+
+.no-tenders-card p {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+/* BUTTON */
+.btn-tenders-secondary {
+  background-color: transparent;
+  border: 2px solid #1b3c6b;
+  color: #1b3c6b;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-tenders-secondary:hover {
+  background-color: #1b3c6b;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .tenders-section {
+    padding: 60px 20px;
+  }
+
+  .tenders-header h2 {
+    font-size: 32px;
+  }
+
+  .no-tenders-card {
+    padding: 40px 20px;
+  }
+}

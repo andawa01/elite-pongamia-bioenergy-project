@@ -2,6 +2,7 @@ import React from "react";
 import "./Impact.css";
 import { impactData } from "../../assets/dummydata.js";
 import photo4 from "../../assets/photo 4.jpeg";
+import photo6 from "../../assets/photo 6.jpeg";
 
 const Impact = () => {
   return (
@@ -20,31 +21,49 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* ===== IMPACT QUOTE SECTION ===== */}
+      {/* ===== SECTION 1: IMAGE LEFT, CARD RIGHT ===== */}
       <section className="impact-quote-section">
         <div className="impact-quote-container">
-          {/* LEFT IMAGE */}
           <div className="impact-quote-image">
             <img src={photo4} alt="Impact testimonial" />
           </div>
 
-          {/* RIGHT CARD */}
           <div className="impact-quote-box">
             <p className="impact-quote-text">
               "Modern bioenergy is the largest source of renewable energy
               globally today. Its sustainable expansion is critical to a
-              net-zero future, providing a versatile solution for sectors that
-              are otherwise hard to decarbonize."
+              net-zero future."
             </p>
-
             <div className="impact-quote-author">
               <h4 className="author-name">{impactData.authorName}</h4>
               <p className="author-title">{impactData.authorTitle}</p>
             </div>
-
-            {/* CTA BAR */}
             <div className="impact-cta-wrapper">
               <button className="btn-impact-cta">SEE THE IMPACT →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== SECTION 2: IMAGE RIGHT, CARD LEFT (REVERSED) ===== */}
+      <section className="impact-quote-section" style={{ paddingTop: 0 }}>
+        <div className="impact-quote-container reverse">
+          <div className="impact-quote-image">
+            <img src={photo6} alt="Impact testimonial 2" />
+          </div>
+
+          <div className="impact-quote-box">
+            <p className="impact-quote-text">
+              "Bioenergy solutions provide a versatile solution for sectors that
+              are otherwise hard to decarbonize, ensuring a greener tomorrow for
+              all communities."
+            </p>
+            <div className="impact-quote-author">
+              <h4 className="author-name">KHASOHA K VALARY</h4>
+              <p className="author-title">PROJECT MANAGER</p>
+            </div>
+            <div className="impact-cta-wrapper">
+              <button className="btn-impact-cta">LEARN MORE →</button>
             </div>
           </div>
         </div>

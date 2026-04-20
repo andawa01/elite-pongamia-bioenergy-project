@@ -18,11 +18,21 @@ const Footer = () => {
         {/* Left Section: Brand & Bio */}
         <div className="footer-section brand-column">
           <Link to="/" onClick={scrollToTop} className="footer-logo-wrapper">
-            <img
+            {/*<img
               className="rounded-2xl"
               src={footerData.logoUrl}
               alt="Elite Pongamia"
-            />
+            /> */}
+            {/* BRAND NAME */}
+            <h3 className="footer-brand-title">
+              ELITE PONGAMIA <br />
+              BIOENERGY PROJECT LTD
+            </h3>
+
+            {/* TAGLINE */}
+            <p className="footer-tagline">
+              Nature's energy for a greener tomorrow
+            </p>
           </Link>
           <p className="footer-description">
             Leading the charge in sustainable bio-energy solutions. Empowering
@@ -64,6 +74,11 @@ const Footer = () => {
             <li>
               <Link to="/contact-us" onClick={scrollToTop}>
                 Contact US
+              </Link>
+            </li>
+            <li>
+              <Link to="/tenders" onClick={scrollToTop}>
+                Tenders
               </Link>
             </li>
           </ul>

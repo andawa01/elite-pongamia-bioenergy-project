@@ -1,12 +1,18 @@
-/* ===== SECTION ===== */
+/* ===== SECTION CONTAINER ===== */
 .products-section {
   background: #f4f6f8;
   padding: 80px 40px;
 }
 
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 /* ===== HEADER ===== */
 .products-header {
   margin-bottom: 50px;
+  text-align: center; /* Centered for a cleaner look above sliders */
 }
 
 .products-header h2 {
@@ -17,6 +23,7 @@
 
 .products-header span {
   font-weight: 700;
+  color: #5e8e3e; /* Matches your brand green */
 }
 
 .products-header p {
@@ -25,84 +32,133 @@
   margin-top: 10px;
 }
 
-/* ===== GRID ===== */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+/* ===== SWIPER SLIDER ADJUSTMENTS ===== */
+.products-slider {
+  padding: 20px 10px 60px !important; /* Extra bottom padding for pagination dots */
 }
 
-/* ===== CARD ===== */
+/* ===== PRODUCT CARD ===== */
 .product-card {
   background: #fff;
   border-radius: 16px;
-  overflow: hidden; /* important so image respects rounded corners */
+  overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
+  height: 100%; /* Ensures all cards in the slider are the same height */
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== IMAGE ===== */
+/* ===== IMAGE SECTION ===== */
 .product-image {
   width: 100%;
-  height: 200px; /* adjust as needed */
+  height: 250px; /* Fixed height for consistency */
   overflow: hidden;
 }
 
 .product-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* makes image fully fill area */
+  object-fit: cover;
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .product-card:hover .product-image img {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
-/* ===== CONTENT ===== */
+/* ===== CONTENT SECTION ===== */
 .product-content {
   padding: 25px;
+  flex-grow: 1; /* Pushes the price to the bottom if text is short */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
-/* TEXT */
 .product-content h3 {
-  margin: 15px 0;
+  margin-bottom: 15px;
   color: #1b3c6b;
+  font-size: 22px;
 }
 
 .product-content ul {
   padding: 0;
   list-style: none;
-  font-size: 14px;
+  font-size: 15px;
   color: #555;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .product-content li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* PRICE */
 .price {
+  margin-top: auto; /* Aligns price to the bottom of the card */
   font-weight: 700;
   color: #5e8e3e;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+/* ===== SWIPER CUSTOM UI ===== */
+
+/* Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1b3c6b !important;
+  background: rgba(255, 255, 255, 0.8);
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+/* Pagination Dots */
+.swiper-pagination-bullet {
+  background: #cbd5e0 !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #5e8e3e !important;
+  width: 25px !important; /* Makes the active dot an elongated pill */
+  border-radius: 5px !important;
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+  .products-section {
+    padding: 60px 20px;
+  }
+
+  .products-header h2 {
+    font-size: 32px;
+  }
+
+  .product-image {
+    height: 200px;
   }
 }
 
-@media (max-width: 600px) {
-  .products-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 480px) {
+  .products-header h2 {
+    font-size: 28px;
   }
 }

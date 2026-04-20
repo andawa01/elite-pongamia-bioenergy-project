@@ -1,8 +1,7 @@
 import React from "react";
 import "./About.css";
-import photo1 from "../../assets/photo 1.jpeg";
 import photo3 from "../../assets/photo 3.jpeg";
-// Replace these with your actual video paths
+import photo5 from "../../assets/photo 5.jpeg";
 import video1 from "../../assets/video1.mp4";
 import video2 from "../../assets/video2.mp4";
 import { Link } from "react-router-dom";
@@ -45,7 +44,7 @@ const About = () => {
               </div>
             </div>
             <div className="video-card">
-              <video controls poster={photo1} className="about-vid-element">
+              <video controls poster={photo5} className="about-vid-element">
                 <source src={video2} type="video/mp4" />
               </video>
               <div className="video-caption">
@@ -81,7 +80,7 @@ const About = () => {
 
           <div className="narrative-grid reverse">
             <div className="narrative-image">
-              <img src={photo1} alt="Renewable Future" />
+              <img src={photo5} alt="Renewable Future" />
             </div>
             <div className="narrative-content">
               <span className="section-label">Our Vision</span>

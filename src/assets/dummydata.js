@@ -1,4 +1,4 @@
-import energy from "../assets/energy.webp";
+import solar from "../assets/solar.jpg";
 import biodigester from "../assets/bio-digester.webp";
 import logo from "../assets/logo.png";
 
@@ -6,7 +6,7 @@ export const heroData = {
     title: "Nature's energy for a greener tomorrow",
     subtitle: "Harness the power of renewable energy and sustainable solutions to build a better, cleaner future for generations to come.",
     primaryBtn: "Explore Solutions",
-    imageUrl: energy
+    imageUrl: solar
 };
 
 export const heroSectionData = {

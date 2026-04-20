@@ -1,89 +1,111 @@
 import React from "react";
+import biodigester from "../../assets/bio-digester.webp";
 import "./Bio.css";
 
 const Bio = () => {
   return (
-    <div className="bio-page">
-      {/* HERO SECTION */}
-      <section className="bio-hero">
-        <div className="bio-hero-content">
-          <h1 className="bio-hero-title">BioDigesters</h1>
-          <p className="bio-hero-subtitle">
-            Turning organic waste into clean energy and organic fertilizer for a
-            sustainable future.
-          </p>
+    <div className="bio-page-wrapper">
+      {/* --- PREMIUM HERO SECTION --- */}
+      <header className="bio-hero-modern">
+        <div className="bio-hero-overlay"></div>
+        <div className="bio-container">
+          <div className="bio-hero-inner">
+            <span className="bio-tag">Nature-Based Tech</span>
+            <h1>
+              Innovative <span>BioDigester</span> Systems
+            </h1>
+            <p>
+              Elite Pongamia Bioenergy Project Ltd is committed to innovation
+              and sustainability—driving a future where organic waste is
+              transformed into scalable energy and restoration.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      {/* --- WHAT IS IT SECTION --- */}
+      <section className="bio-content-row">
+        <div className="bio-container split-grid">
+          <div className="bio-media-box">
+            <img
+              src={biodigester}
+              alt="Advanced BioDigester"
+              className="main-bio-img"
+            />
+            <div className="bio-floating-card">
+              <h4>100% Green</h4>
+              <p>Carbon Neutral Process</p>
+            </div>
+          </div>
+          <div className="bio-text-box">
+            <h2 className="section-title">What is a BioDigester?</h2>
+            <p className="description">
+              A biodigester is an advanced system that breaks down organic
+              waste—such as food scraps, animal manure, and plant materials—in
+              an oxygen-free environment.
+            </p>
+            <p className="description">
+              This anaerobic digestion process produces{" "}
+              <strong>renewable biogas</strong> (primarily methane) and
+              high-quality <strong>organic fertilizer</strong>, supporting the
+              circular economy model.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* INTRO SECTION */}
-      <section className="bio-section">
-        <div className="bio-text">
-          <h2>What is a BioDigester?</h2>
-          <p>
-            A biodigester is a system that breaks down organic waste such as
-            food scraps, animal manure, and plant materials in an oxygen-free
-            environment. This process produces biogas (mainly methane) and
-            organic fertilizer.
-          </p>
-        </div>
+      {/* --- IMPORTANCE (GRID CARDS) --- */}
+      <section className="bio-importance-bg">
+        <div className="bio-container">
+          <div className="centered-title">
+            <h2 className="section-title light">Why it Matters</h2>
+            <p>
+              Our mandate is to expand access to clean cooking and decentralized
+              energy.
+            </p>
+          </div>
 
-        <div className="bio-image">
-          <img
-            src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0"
-            alt="BioDigester system"
-          />
-        </div>
-      </section>
-
-      {/* IMPORTANCE */}
-      <section className="bio-section reverse">
-        <div className="bio-image">
-          <img
-            src="https://images.unsplash.com/photo-1509391366360-2e959784a276"
-            alt="Clean cooking energy"
-          />
-        </div>
-
-        <div className="bio-text">
-          <h2>Why is it Important?</h2>
-          <ul className="bio-list">
-            <li>Produces clean, renewable energy (biogas)</li>
-            <li>Reduces reliance on firewood and charcoal</li>
-            <li>Helps reduce deforestation and air pollution</li>
-            <li>Converts waste into useful organic fertilizer</li>
-            <li>Improves sanitation in rural and urban areas</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* BENEFITS */}
-      <section className="bio-section">
-        <div className="bio-text">
-          <h2>Key Benefits</h2>
-          <p>
-            Biodigesters support a circular economy by turning waste into
-            valuable resources. They are widely used in farms, institutions, and
-            households to improve energy access and sustainability.
-          </p>
-        </div>
-
-        <div className="bio-image">
-          <img
-            src="https://images.unsplash.com/photo-1605600659908-0ef719419d41"
-            alt="Farming and organic fertilizer use"
-          />
+          <div className="importance-grid">
+            {[
+              {
+                t: "Renewable Energy",
+                d: "Consistent supply of clean biogas for cooking and heating.",
+              },
+              {
+                t: "Deforestation",
+                d: "Reduces critical reliance on firewood and charcoal.",
+              },
+              {
+                t: "Climate Action",
+                d: "Actively mitigates change through reduced methane emissions.",
+              },
+              {
+                t: "Bio-Fertilizer",
+                d: "Converts waste into nutrient-rich soil enhancement.",
+              },
+            ].map((item, i) => (
+              <div className="imp-card" key={i}>
+                <div className="imp-icon">✓</div>
+                <h3>{item.t}</h3>
+                <p>{item.d}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CONCLUSION */}
-      <section className="bio-footer">
-        <div className="bio-footer-content">
-          <h2>Building a Cleaner Future</h2>
-          <p>
-            BioDigesters are a key solution in the transition to clean energy,
-            especially in rural communities where access to modern energy is
-            limited.
-          </p>
+      {/* --- IMPACT / CONCLUSION --- */}
+      <section className="bio-final-cta">
+        <div className="bio-container">
+          <div className="cta-card-premium">
+            <h2>Building a Greener Tomorrow</h2>
+            <p>
+              By integrating bioenergy production with community-based
+              initiatives, we create a holistic model that delivers both
+              environmental and socio-economic impact.
+            </p>
+            <button className="bio-btn-primary">Inquire About Systems</button>
+          </div>
         </div>
       </section>
     </div>

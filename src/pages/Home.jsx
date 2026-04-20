@@ -6,12 +6,14 @@ import SectorNews from "../components/SectorNews/SectorNews.jsx";
 import SectorResource from "../components/SectorResource/SectorResource.jsx";
 import Section from "../components/Section/Section.jsx";
 import Footer from "../components/Footer/Footer.jsx";
+import TrustedPartners from "../components/Trusted/TrustedPartners.jsx";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Hero />
+      <TrustedPartners />
       <Impact />
       <SectorNews />
       <SectorResource />

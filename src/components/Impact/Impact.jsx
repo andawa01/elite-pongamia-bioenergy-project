@@ -3,8 +3,29 @@ import "./Impact.css";
 import { impactData } from "../../assets/dummydata.js";
 import photo from "../../assets/photo 4.jpeg";
 import photo6 from "../../assets/photo 6.jpeg";
+import { BookOpen, Soup, Settings } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Impact = () => {
+  const navigate = useNavigate();
+  const pillars = [
+    {
+      title: "Better Education",
+      icon: <BookOpen size={24} />,
+      color: "#A85328", // Brownish-orange
+    },
+    {
+      title: "Healthy Cooking",
+      icon: <Soup size={24} />,
+      color: "#D96C26", // Bright orange
+    },
+    {
+      title: "Economic Empowerment",
+      icon: <Settings size={24} />,
+      color: "#3D632D", // Dark green
+    },
+  ];
+
   return (
     <>
       {/* ===== IMPACT HEADER SECTION ===== */}
@@ -13,11 +34,41 @@ const Impact = () => {
           <h2 className="impact-title">
             Our <span>Impact</span>
           </h2>
+
           <p className="impact-description">
             Together, we develop, promote, and scale sustainable bioenergy
             solutions that contribute to clean energy access, environmental
             conservation, and socio-economic development.
           </p>
+
+          {/* Pillars */}
+          <div className="impact-pillars">
+            {pillars.map((pillar, index) => (
+              <React.Fragment key={index}>
+                <div
+                  className="impact-pill"
+                  style={{ backgroundColor: pillar.color }}
+                >
+                  {pillar.icon}
+                  <span>{pillar.title}</span>
+                </div>
+
+                {index < pillars.length - 1 && (
+                  <div className="impact-arrow">→</div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+
+          {/* CTA BUTTON */}
+          <div className="impact-header-cta">
+            <button
+              className="btn-impact-header"
+              onClick={() => navigate("/about-us")}
+            >
+              Learn More About Us →
+            </button>
+          </div>
         </div>
       </section>
 

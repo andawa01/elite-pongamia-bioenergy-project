@@ -1,15 +1,13 @@
 import React from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper modules
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Optional: Use icons for better look
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import "./SectorResource.css";
+
 import fifty from "../../assets/50litres.webp";
 import sixty from "../../assets/60Litres.png";
 import hundred from "../../assets/100Litres.jpg";
@@ -88,39 +86,57 @@ const SectorResource = () => {
           <p>Explore our bioenergy cooking solutions and pricing options.</p>
         </div>
 
-        <Swiper
-          modules={[Pagination, Autoplay, Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          className="products-slider"
-        >
-          {products.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="product-card">
-                <div className="product-image">
-                  <img src={item.image} alt={item.size} />
+        {/* WRAPPER FOR SLIDER + ARROWS */}
+        <div className="slider-relative-wrapper">
+          <Swiper
+            modules={[Pagination, Autoplay, Navigation]}
+            spaceBetween={30}
+            slidesPerView={1}
+            // Assign custom classes here
+            navigation={{
+              nextEl: ".custom-next",
+              prevEl: ".custom-prev",
+            }}
+            pagination={{ clickable: true, el: ".custom-pagination" }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="products-slider"
+          >
+            {products.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className="product-card">
+                  <div className="product-image">
+                    <img src={item.image} alt={item.size} />
+                  </div>
+                  <div className="product-content">
+                    <h3>{item.size} System</h3>
+                    <ul>
+                      <li>⚡ Power: {item.power}</li>
+                      <li>⚖️ Weight: {item.weight}</li>
+                      <li>👥 Capacity: {item.capacity}</li>
+                    </ul>
+                    <div className="price">{item.price}</div>
+                  </div>
                 </div>
-                <div className="product-content">
-                  <h3>{item.size} System</h3>
-                  <ul>
-                    <li>⚡ Power: {item.power}</li>
-                    <li>⚖️ Weight: {item.weight}</li>
-                    <li>👥 Capacity: {item.capacity}</li>
-                  </ul>
-                  <div className="price">{item.price}</div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* CUSTOM EXTERNAL ARROWS */}
+          <div className="custom-prev">
+            <ChevronLeft size={30} />
+          </div>
+          <div className="custom-next">
+            <ChevronRight size={30} />
+          </div>
+
+          {/* OPTIONAL: External Pagination if you want it below arrows */}
+          <div className="custom-pagination"></div>
+        </div>
       </div>
     </section>
   );

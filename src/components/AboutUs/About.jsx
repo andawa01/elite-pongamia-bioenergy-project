@@ -5,6 +5,7 @@ import photo5 from "../../assets/photo 5.jpeg";
 import video1 from "../../assets/video1.mp4";
 import video2 from "../../assets/video2.mp4";
 import { Link } from "react-router-dom";
+import ImpactFlow from "../ImpactFlow/ImpactFlow";
 
 const About = () => {
   return (
@@ -134,6 +135,8 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <ImpactFlow />
 
       {/* --- FINAL ACTION --- */}
       <section className="about-impact-footer">

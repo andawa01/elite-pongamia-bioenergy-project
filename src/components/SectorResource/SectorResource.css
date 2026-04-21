@@ -142,6 +142,86 @@
   border-radius: 5px !important;
 }
 
+.slider-relative-wrapper {
+  position: relative;
+  padding: 0 60px; /* Creates space for the arrows on the sides */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Base style for both arrows */
+.custom-prev,
+.custom-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0ea5e9; /* Your brand blue */
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.custom-prev:hover,
+.custom-next:hover {
+  background-color: #0ea5e9;
+  color: white;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Position them outside the slider edges */
+.custom-prev {
+  left: 0;
+}
+
+.custom-next {
+  right: 0;
+}
+
+/* Fix for disabled state (Swiper adds this class automatically) */
+.swiper-button-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Custom Pagination dots styling */
+.custom-pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #0ea5e9 !important;
+}
+
+/* Hide default swiper arrows if they still appear */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+/* Responsiveness: Move arrows inside on small screens to save space */
+@media (max-width: 768px) {
+  .slider-relative-wrapper {
+    padding: 0 10px;
+  }
+  .custom-prev,
+  .custom-next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .products-section {

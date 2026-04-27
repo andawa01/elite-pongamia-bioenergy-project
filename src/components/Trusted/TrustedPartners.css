@@ -50,12 +50,57 @@
 /* =========================
    Logo
 ========================= */
+/* Container that hides the scrollbar/overflow */
+.partners-slider {
+  overflow: hidden;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  background: white;
+}
+
+/* The moving track */
+.partners-track {
+  display: flex;
+  width: max-content; /* Critical: keeps items in one long row */
+  gap: 25px;
+  animation: scroll 30s linear infinite;
+}
+
+/* Pause animation on hover for better UX */
+.partners-track:hover {
+  animation-play-state: paused;
+}
+
+.partner-card {
+  width: 180px;
+  height: 100px;
+  flex-shrink: 0; /* Prevents logos from squishing */
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* The Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves the track left by half its width (one full set of logos) */
+    transform: translateX(-50%);
+  }
+}
+
+/* Logo styling remains the same as your original */
 .partner-card img {
   max-width: 100px;
   max-height: 60px;
   object-fit: contain;
   opacity: 0.75;
-  transition: all 0.3s ease;
 }
 
 .partner-card:hover img {

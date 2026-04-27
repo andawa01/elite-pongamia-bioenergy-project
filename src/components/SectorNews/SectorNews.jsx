@@ -3,12 +3,6 @@ import "./SectorNews.css";
 
 const services = [
   {
-    icon: "💧",
-    title: "Hydro Energy",
-    description:
-      "Sustainable hydroelectric solutions focused on efficient water resource management.",
-  },
-  {
     icon: "⚡",
     title: "Smart Grids",
     description:

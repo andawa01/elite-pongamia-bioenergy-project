@@ -2,6 +2,9 @@ import React from "react";
 import "./WhatWeDo.css";
 import biodigester from "../../assets/bio-digester.webp";
 import photo5 from "../../assets/photo 5.jpeg";
+import photo3 from "../../assets/photo 3.jpeg";
+import video3 from "../../assets/video3.mp4";
+import video4 from "../../assets/video4.mp4";
 
 const WhatWeDo = () => {
   return (
@@ -89,6 +92,103 @@ const WhatWeDo = () => {
                 <p>{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="wwd-video-section">
+        <div className="container">
+          <div className="video-layout-grid">
+            <div className="video-card">
+              <video controls poster={photo3} className="wwd-vid-element">
+                <source src={video3} type="video/mp4" />
+              </video>
+              <div className="video-caption">
+                <h3>Innovation in Motion</h3>
+                <p>
+                  Advancing renewable solutions through continuous research and
+                  technology.
+                </p>
+              </div>
+            </div>
+
+            <div className="video-card">
+              <video controls poster={photo5} className="wwd-vid-element">
+                <source src={video4} type="video/mp4" />
+              </video>
+              <div className="video-caption">
+                <h3>Community & Climate</h3>
+                <p>
+                  Creating green jobs and measurable carbon reduction in
+                  underserved regions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- STRATEGIC ENGAGEMENTS & AFFILIATIONS --- */}
+      <section className="affiliations-section">
+        <div className="container">
+          <div className="portal-header-block">
+            <span className="portal-badge">Our Influence</span>
+            <h2 className="portal-main-title">
+              Strategic Engagements & Affiliations
+            </h2>
+            <div className="title-underline"></div>
+          </div>
+
+          <div className="affiliations-wrapper">
+            {/* Category 1: Summits & Conferences */}
+            <div className="affiliation-group">
+              <h3>
+                <span className="group-icon">🌍</span> Summits & Conferences
+              </h3>
+              <ul>
+                <li>Kakamega Cooking Hub (2023)</li>
+                <li>Clean Cooking Week</li>
+                <li>Devolution Conference</li>
+                <li>Africa-Europe Summit (Keptan, Italy)</li>
+                <li>
+                  Conference of Energy Ministers of Africa (CEMA) —{" "}
+                  <small>MD as Kenyan Representative</small>
+                </li>
+              </ul>
+            </div>
+
+            {/* Category 2: National Strategy & Appointments */}
+            <div className="affiliation-group">
+              <h3>
+                <span className="group-icon">🇰🇪</span> National Strategy &
+                Appointments
+              </h3>
+              <ul>
+                <li>Kenya National Clean Transition Strategy</li>
+                <li>Kenyan National E-cooking Transition Strategy</li>
+                <li>Country Integrated Strategy</li>
+                <li>
+                  <strong>Elite Pongamia:</strong> Appointed as a Private Sector
+                  Cooking Representative
+                </li>
+                <li>World Bank FLOCCA</li>
+              </ul>
+            </div>
+
+            {/* Category 3: Professional Memberships */}
+            <div className="affiliation-group">
+              <h3>
+                <span className="group-icon">🛡️</span> Professional Memberships
+              </h3>
+              <ul>
+                <li>
+                  Founders of Cleaning Cooking Association of Kenya (CCAK)
+                </li>
+                <li>Members of Climate Change Working Group</li>
+                <li>Members of KEREA (Kenya Renewable Energy Association)</li>
+                <li>Association of Energy Professionals of East Africa</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

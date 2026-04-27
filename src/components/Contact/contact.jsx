@@ -49,7 +49,7 @@ const Contact = () => {
             </div>
             <div className="info-item">
               <FaEnvelope className="icon" />
-              <span>info@elitepongamia.com</span>
+              <span>pongamia2018@gmail.com</span>
             </div>
             <div className="info-item">
               <FaMapMarkerAlt className="icon" />

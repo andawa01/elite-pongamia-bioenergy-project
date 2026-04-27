@@ -88,7 +88,7 @@ const Footer = () => {
         <div className="footer-section contact-column">
           <h4 className="column-title">Contact Us</h4>
           <p>Kakamega, Kenya</p>
-          <p>Email: info@elitepongamia.com</p>
+          <p>Email: pongamia2018@gmail.com</p>
           <p>Phone: +254 (7) 422 22985</p>
         </div>
       </div>

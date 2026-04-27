@@ -6,6 +6,8 @@ import video1 from "../../assets/video1.mp4";
 import video2 from "../../assets/video2.mp4";
 import { Link } from "react-router-dom";
 import ImpactFlow from "../ImpactFlow/ImpactFlow";
+import { Download } from "lucide-react";
+import companyProfile from "../../assets/EPBP-Company-Profile.pdf";
 
 const About = () => {
   return (
@@ -13,17 +15,26 @@ const About = () => {
       {/* --- ELITE HERO --- */}
       <section className="about-hero-minimal">
         <div className="container">
-          <span className="brand-badge">
-            Elite Pongamia Bioenergy Project Ltd
-          </span>
+          <a
+            href={companyProfile}
+            download="EPBP_Company_Profile.pdf"
+            className="brand-badge-link"
+          >
+            <span className="brand-badge">
+              Elite Pongamia Bioenergy Project Ltd
+              <Download size={14} strokeWidth={3} className="badge-icon" />
+            </span>
+          </a>
           <h1>
-            Transforming Landscapes, <br />
-            <span>Restoring Ecosystems</span>
+            Advancing Bioenergy, <br />
+            <span>Powering Sustainable Growth</span>
           </h1>
           <p>
-            We are a forward-thinking renewable energy company dedicated to
-            nature-based solutions through the cultivation of Pongamia trees and
-            sustainable bioenergy production.
+            Headquartered in Kakamega, Elite Pongamia Bioenergy Project Ltd is a
+            premier Kenyan renewable energy firm. Led by CEO Danson Ligare, we
+            specialize in high-impact biomass fuels, biofuels, and solar
+            solutions designed to drive the adoption of clean energy across
+            Africa.
           </p>
         </div>
       </section>
@@ -69,12 +80,12 @@ const About = () => {
             </div>
             <div className="narrative-content">
               <span className="section-label">Our Mission</span>
-              <h2>Impactful Change</h2>
+              <h2>Mission Statement</h2>
               <p>
-                Nearly one in four people depend on polluting open fires. Our
-                mission is to accelerate the transition to clean, affordable
-                energy while addressing climate change and deforestation through
-                bioenergy and carbon finance.
+                To develop and deliver sustainable and innovative clean energy
+                solutions that empower communities, protect the environment, and
+                drive socio-economic development across Kenya and the wider
+                region.
               </p>
             </div>
           </div>
@@ -85,12 +96,55 @@ const About = () => {
             </div>
             <div className="narrative-content">
               <span className="section-label">Our Vision</span>
-              <h2>Global Resilience</h2>
+              <h2>Vision Statement</h2>
               <p>
-                We champion renewable cooking energy solutions that protect our
-                planet. By integrating sustainable land use with community-based
-                initiatives, we drive a future where ecosystems are restored and
-                communities thrive.
+                To be a leading producer and supplier of renewable energy
+                technologies, pioneering Africa's transition to clean energy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- NOTABLE PROJECTS SECTION --- */}
+      <section className="projects-section">
+        <div className="container">
+          <div className="centered-header">
+            <span className="section-label">Proven Impact</span>
+            <h2>Notable Projects</h2>
+            <p className="section-intro">
+              EPBP has successfully implemented several impactful projects
+              driving the energy transition across the region.
+            </p>
+          </div>
+
+          <div className="projects-grid">
+            <div className="project-card">
+              <div className="project-icon">🔥</div>
+              <h3>Alternative Clean Fuels</h3>
+              <p>
+                Successful production and distribution of high-efficiency
+                briquettes and black pellets, providing a sustainable
+                alternative to traditional charcoal.
+              </p>
+            </div>
+
+            <div className="project-card">
+              <div className="project-icon">🍳</div>
+              <h3>Clean Cooking Solutions</h3>
+              <p>
+                Promotion and deployment of modern cookstoves to improve
+                household air quality and reduce reliance on depleting biomass
+                resources.
+              </p>
+            </div>
+
+            <div className="project-card">
+              <div className="project-icon">☀️</div>
+              <h3>Renewable Electrification</h3>
+              <p>
+                Deployment of solar home systems and photovoltaic (PV) projects,
+                bringing reliable electricity to off-grid and rural communities.
               </p>
             </div>
           </div>
@@ -137,6 +191,48 @@ const About = () => {
       </section>
 
       <ImpactFlow />
+
+      <section className="ambitions-section">
+        <div className="container">
+          <div className="ambitions-card">
+            <div className="ambitions-content">
+              <span className="section-label">The Road Ahead</span>
+              <h2>Future Ambitions</h2>
+              <p className="ambitions-intro">
+                EPBP is committed to becoming a leading clean energy provider in
+                Kenya and beyond. Our roadmap focuses on scaling impact and
+                operational excellence:
+              </p>
+              <ul className="ambitions-list">
+                <li>
+                  <strong>Financial Capacity:</strong> Strengthening through
+                  strategic investment and funding.
+                </li>
+                <li>
+                  <strong>Technical Expertise:</strong> Expanding collaboration
+                  with international partners.
+                </li>
+                <li>
+                  <strong>Systems Development:</strong> Building efficient
+                  administrative, storage, and distribution systems.
+                </li>
+                <li>
+                  <strong>Stakeholder Engagement:</strong> Enhancing networking
+                  and policy advocacy.
+                </li>
+                <li>
+                  <strong>Community Transition:</strong> Deepening local
+                  involvement to drive energy adoption.
+                </li>
+                <li>
+                  <strong>Scaling Impact:</strong> Consolidating and scaling
+                  existing projects for a greener future.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* --- FINAL ACTION --- */}
       <section className="about-impact-footer">
